@@ -4,20 +4,20 @@
       <button @click="prevClick" class="bg-orange-200 w-10 h-10">P</button>
     </div>
     <div
-      class="parent-container overflow-hidden border-solid border-2 border-indigo-600"
+      class="parent-container overflow-hidden"
       :style="{
         width: width,
         height: height,
       }"
     >
-      <div id="items-container" class="flex" ref="itemsContainer">
+      <div id="items-container" class="flex h-full" ref="itemsContainer">
         <div
           v-for="item in value"
           :key="item.id + 'coursel'"
-          class="bg-gray-400"
+          class="bg-gray-400 h-full"
           :style="{ minWidth: `${100 / numVisible}%` }"
         >
-          <img :src="item.image" class="w-full object-cover" />
+          <img :src="item.image" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>

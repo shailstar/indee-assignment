@@ -9,7 +9,7 @@
       :numScroll="1"
       :showNavigators="false"
       width="100vw"
-      height="50vh"
+      :height="`${100 / 2.45}vw`"
     />
     <div class="flex flex-col gap-2">
       <CategorySection v-for="(category, index) in categoryData" :key="'category' + index" :value="category"/>
