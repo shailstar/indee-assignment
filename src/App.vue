@@ -1,6 +1,6 @@
 <template>
   <div class="w-full bg-black h-full">
-    <div class="text-white absolute z-50 top-5 left-5 text-lg">Indee</div>
+    <Header/>
     <Carousel
       :value="carouselData"
       :numVisible="1"
@@ -22,6 +22,7 @@
 </template>
 
 <script setup>
+import Header from './components/Header/index.vue'
 import Carousel from "./components/Carousel/index.vue";
 import CategorySection from "./components/CategorySection/index.vue";
 import { initCarouselData, initCategoryData } from "./store/data";
