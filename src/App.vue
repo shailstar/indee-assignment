@@ -5,7 +5,7 @@
       :value="carouselData"
       :numVisible="1"
       :autoplay="true"
-      :autoplayInterval="2"
+      :autoplayInterval="5"
       :numScroll="1"
       :showNavigators="false"
       width="100vw"
