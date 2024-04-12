@@ -1,5 +1,5 @@
 <template>
-  <h1>Assignment</h1>
+  <h1 class="text-lime-500">Assignment</h1>
 </template>
 
 <script setup>
