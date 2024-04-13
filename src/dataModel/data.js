@@ -18,7 +18,7 @@ import poster11 from "../assets/posters/poster11.png";
 import poster12 from "../assets/posters/poster12.png";
 import poster13 from "../assets/posters/poster13.png";
 
-export const initCarouselData = () => [
+export const getCarouselData = () => [
   {
     id: "1000",
     code: "f230fh0g3",
@@ -81,7 +81,7 @@ export const initCarouselData = () => [
   },
 ];
 
-export const initCategoryData = () => [
+export const getCategoryData = () => [
   {
     name: "Trending",
     posters: [

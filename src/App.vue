@@ -7,7 +7,6 @@
       :autoplay="true"
       :autoplayInterval="5"
       :numScroll="1"
-      :showNavigators="false"
       :showIndicators="true"
     />
     <div class="flex flex-col gap-10">
@@ -24,11 +23,11 @@
 import Header from './components/Header/index.vue'
 import Carousel from "./components/Carousel/index.vue";
 import CategorySection from "./components/CategorySection/index.vue";
-import { initCarouselData, initCategoryData } from "./store/data";
+import { getCarouselData, getCategoryData } from "./dataModel/data";
 import { ref } from "vue";
 
-const carouselData = ref(initCarouselData());
-const categoryData = ref(initCategoryData());
+const carouselData = ref(getCarouselData());
+const categoryData = ref(getCategoryData());
 </script>
 
 <style scoped></style>

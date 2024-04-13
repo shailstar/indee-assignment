@@ -1,8 +1,5 @@
 <template>
   <div class="flex">
-    <div v-if="showNavigators">
-      <button @click="prevClick" class="bg-orange-200 w-10 h-10">P</button>
-    </div>
     <div
       class="parent-container relative overflow-hidden w-screen h-[60vw] sm:h-[50vw] lg:h-[40vw] before:block before:absolute before:w-full before:h-full before:bg-gradient-to-b before:from-transparent before:via-transparent before:to-black before:z-10 before:via-50% before:to-95%"
     >
@@ -34,9 +31,6 @@
         </div>
       </div>
     </div>
-    <div v-if="showNavigators">
-      <button @click="nextClick" class="bg-orange-200 w-10 h-10">N</button>
-    </div>
   </div>
 </template>
 <script setup>
@@ -47,7 +41,6 @@ const props = defineProps([
   "numVisible",
   "autoplay",
   "numScroll",
-  "showNavigators",
   "showIndicators",
   "autoplayInterval",
 ]);
