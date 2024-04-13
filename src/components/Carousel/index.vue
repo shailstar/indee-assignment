@@ -36,14 +36,39 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from "vue";
 const itemsContainer = ref();
-const props = defineProps([
-  "value",
-  "numVisible",
-  "autoplay",
-  "numScroll",
-  "showIndicators",
-  "autoplayInterval",
-]);
+
+const props = defineProps({
+  value: {
+    //Array of Objects each containing id, image
+    type: Array,
+    required: true
+  },
+  numVisible: {
+    //Number of visible images in a page
+    type: Number,
+    default: 1
+  },
+  autoplay: {
+    //flag for enabling/disabling autoplay (If we add navigation button)
+    type: Boolean,
+    default: true
+  },
+  numScroll: {
+    //Number of items in one scroll 
+    type: Number,
+    default: 1
+  },
+  showIndicators: {
+    //Flag for showing indicators
+    type: Boolean,
+    default: true
+  },
+  autoplayInterval: {
+    //Time interval for autoplay in seconds
+    type: Number,
+    default: 5
+  },
+});
 const totalShiftedItems = ref(0);
 const autoPlayIntervalId = ref("");
 

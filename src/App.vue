@@ -4,7 +4,6 @@
     <Carousel
       :value="carouselData"
       :numVisible="1"
-      :autoplay="true"
       :autoplayInterval="5"
       :numScroll="1"
       :showIndicators="true"

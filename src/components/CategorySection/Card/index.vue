@@ -30,8 +30,13 @@ const calcWidth = ref(DEFAULT_CARD_WIDTH); //px
 const card = ref();
 const props = defineProps(["value"]);
 
+/*
+In this function we are calculating card width dynamically so
+that after wraping if there is any space left in a row then it will be distributed
+equally to card widths
+*/
 function calculateDynamicCardWidth() {
-  //Added Breakpoint for screen bigger than 640px
+  //Added Breakpoint for different screen sizes
   if(window.innerWidth <= 360){
     minCardWidth.value = 150;
   }else if(window.innerWidth > 360 && window.innerWidth <= 420){
