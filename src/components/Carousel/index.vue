@@ -4,7 +4,7 @@
       <button @click="prevClick" class="bg-orange-200 w-10 h-10">P</button>
     </div>
     <div
-      class="parent-container overflow-hidden w-screen h-[60vw] sm:h-[50vw] lg:h-[40vw]"
+      class="parent-container relative overflow-hidden w-screen h-[60vw] sm:h-[50vw] lg:h-[40vw]"
     >
       <div id="items-container" class="flex h-full" ref="itemsContainer">
         <div
@@ -16,6 +16,19 @@
           <img :src="item.image" class="w-full h-full object-cover" />
         </div>
       </div>
+      <div id="indicators" class="w-full absolute bottom-5 flex justify-center ">
+        <div id="indicators-container" class="flex gap-2 items-center">
+          <div
+            v-for="pageNumber in totalNumbersOfPages"
+            :key="'page ' + pageNumber"
+            class="bg-white rounded-full"
+            :class="{
+              'w-2 h-2': currentPageNumber !== pageNumber,
+              'w-4 h-4': currentPageNumber === pageNumber,
+            }"
+          ></div>
+        </div>
+      </div>
     </div>
     <div v-if="showNavigators">
       <button @click="nextClick" class="bg-orange-200 w-10 h-10">N</button>
@@ -23,7 +36,7 @@
   </div>
 </template>
 <script setup>
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, computed } from "vue";
 const itemsContainer = ref();
 const props = defineProps([
   "value",
@@ -37,6 +50,14 @@ const props = defineProps([
 ]);
 const totalShiftedItems = ref(0);
 const autoPlayIntervalId = ref("");
+
+const totalNumbersOfPages = computed(() => {
+  return Math.ceil(props.value.length / props.numVisible);
+});
+
+const currentPageNumber = computed(() => {
+  return totalShiftedItems.value + 1;
+});
 
 function prevClick() {
   if (totalShiftedItems.value > 0) {
