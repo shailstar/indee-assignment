@@ -32,8 +32,12 @@ const props = defineProps(["value"]);
 
 function calculateDynamicCardWidth() {
   //Added Breakpoint for screen bigger than 640px
-  if (window.innerWidth > 640) {
-    minCardWidth.value = 192;
+  if(window.innerWidth <= 360){
+    minCardWidth.value = 150;
+  }else if(window.innerWidth > 360 && window.innerWidth <= 420){
+    minCardWidth.value = 160;
+  }else if (window.innerWidth > 420 && window.innerWidth <= 640) {
+    minCardWidth.value = 175; //px
   }else{
     minCardWidth.value = DEFAULT_CARD_WIDTH;
   }
