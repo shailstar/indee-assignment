@@ -4,11 +4,7 @@
       <button @click="prevClick" class="bg-orange-200 w-10 h-10">P</button>
     </div>
     <div
-      class="parent-container overflow-hidden"
-      :style="{
-        width: width,
-        height: height,
-      }"
+      class="parent-container overflow-hidden w-screen h-[60vw] sm:h-[50vw] lg:h-[40vw]"
     >
       <div id="items-container" class="flex h-full" ref="itemsContainer">
         <div
