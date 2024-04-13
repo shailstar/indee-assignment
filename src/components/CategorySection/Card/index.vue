@@ -19,10 +19,8 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+import { PARENT_CONTAINER_PADDING, CARD_GAP, DEFAULT_CARD_WIDTH } from '../index.constant'
 
-const DEFAULT_CARD_WIDTH = 175; //px
-const PARENT_CONTAINER_PADDING = 40; //px
-const CARD_GAP = 12; //px
 const minCardWidth = ref(DEFAULT_CARD_WIDTH); // px
 const calcWidth = ref(DEFAULT_CARD_WIDTH); //px
 const card = ref();
@@ -34,12 +32,14 @@ onMounted(() => {
     minCardWidth.value = 192;
   }
 
+  //Number tiles that can be fitted in View Port Width
   let numTiles = Math.floor(
-    (window.innerWidth - PARENT_CONTAINER_PADDING) / minCardWidth.value
+    (window.innerWidth - (PARENT_CONTAINER_PADDING * 2)) / minCardWidth.value
   );
 
+  //Calculating Card Width after adjustment for Parent Padding and Gap
   calcWidth.value =
-    (window.innerWidth - PARENT_CONTAINER_PADDING - (numTiles - 1) * CARD_GAP) /
+    (window.innerWidth - (PARENT_CONTAINER_PADDING * 2) - (numTiles - 1) * CARD_GAP) /
     numTiles;
 });
 </script>

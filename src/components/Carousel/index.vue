@@ -50,8 +50,6 @@ const props = defineProps([
   "showNavigators",
   "showIndicators",
   "autoplayInterval",
-  "width",
-  "height",
 ]);
 const totalShiftedItems = ref(0);
 const autoPlayIntervalId = ref("");
