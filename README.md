@@ -28,5 +28,8 @@ npm run dev
 npm run build
 ```
 
+### Node Version
+v18.17.1
+
 ### Link
 [https://indee-assignment.netlify.app/](https://indee-assignment.netlify.app/)
