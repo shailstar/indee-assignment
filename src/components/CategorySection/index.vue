@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-2 ">
-    <div class="text-3xl font-bold font-sans text-white">{{ value.name }}</div>
+  <div class="flex flex-col gap-2">
+    <div class="text-3xl font-medium font-sans text-white">{{ value.name }}</div>
     <div id="cards-container" class="flex gap-3 flex-wrap">
       <Card
         v-for="(poster, index) in value.posters"

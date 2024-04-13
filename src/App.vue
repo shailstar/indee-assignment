@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-black h-full">
+  <div class="w-full bg-black h-full flex flex-col gap-5">
     <Header/>
     <Carousel
       :value="carouselData"
@@ -11,7 +11,7 @@
       width="100vw"
       :height="`${100 / 2.45}vw`"
     />
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-10 px-5">
       <CategorySection
         v-for="(category, index) in categoryData"
         :key="'category' + index"
