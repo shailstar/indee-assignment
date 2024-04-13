@@ -27,3 +27,6 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Link
+[https://indee-assignment.netlify.app/](https://indee-assignment.netlify.app/)
