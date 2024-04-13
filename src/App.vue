@@ -8,6 +8,7 @@
       :autoplayInterval="5"
       :numScroll="1"
       :showNavigators="false"
+      :showIndicators="true"
       width="100vw"
       :height="`${100 / 2.45}vw`"
     />
