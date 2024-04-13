@@ -29,5 +29,3 @@ import { ref } from "vue";
 const carouselData = ref(getCarouselData());
 const categoryData = ref(getCategoryData());
 </script>
-
-<style scoped></style>

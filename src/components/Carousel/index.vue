@@ -94,4 +94,3 @@ onUnmounted(() => {
   clearInterval(autoPlayIntervalId.value);
 });
 </script>
-<style scoped></style>

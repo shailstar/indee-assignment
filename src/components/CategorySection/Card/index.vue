@@ -62,4 +62,3 @@ onUnmounted(() => {
   window.removeEventListener("resize", calculateDynamicCardWidth);
 });
 </script>
-<style scopped></style>
