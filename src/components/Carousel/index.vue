@@ -36,6 +36,8 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from "vue";
 const itemsContainer = ref();
+//Number of items in one scroll 
+const NUMBER_SCROLL_ITEMS = 1; 
 
 const props = defineProps({
   value: {
@@ -53,11 +55,6 @@ const props = defineProps({
     type: Boolean,
     default: true
   },
-  numScroll: {
-    //Number of items in one scroll 
-    type: Number,
-    default: 1
-  },
   showIndicators: {
     //Flag for showing indicators
     type: Boolean,
@@ -73,28 +70,19 @@ const totalShiftedItems = ref(0);
 const autoPlayIntervalId = ref("");
 
 const totalNumbersOfPages = computed(() => {
-  return Math.ceil(props.value.length / props.numVisible);
+  return props.value.length - props.numVisible + 1;
 });
 
 const currentPageNumber = computed(() => {
   return totalShiftedItems.value + 1;
 });
 
-function prevClick() {
-  if (totalShiftedItems.value > 0) {
-    totalShiftedItems.value = totalShiftedItems.value - props.numScroll;
-    itemsContainer.value.style.transform = `translate(-${
-      totalShiftedItems.value * (100 / props.numVisible)
-    }%, 0px)`;
-  }
-}
-
 function nextClick() {
   if (totalShiftedItems.value <= props.value.length - props.numVisible) {
     if (totalShiftedItems.value === props.value.length - props.numVisible) {
       totalShiftedItems.value = 0;
     } else {
-      totalShiftedItems.value = totalShiftedItems.value + props.numScroll;
+      totalShiftedItems.value = totalShiftedItems.value + NUMBER_SCROLL_ITEMS;
     }
 
     itemsContainer.value.style.transform = `translate(-${

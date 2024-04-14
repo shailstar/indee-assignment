@@ -33,14 +33,16 @@ const props = defineProps(["value"]);
 /*
 In this function we are calculating card width dynamically so
 that after wraping if there is any space left in a row then it will be distributed
-equally to card widths
+equally to card widths.
+Note: By this calculation, we are making each card width equal even if those cards resides
+in different categories.
 */
 function calculateDynamicCardWidth() {
-  //Added Breakpoint for different screen sizes
+  //Added Breakpoint for different screen sizes (in pixels)
   if(window.innerWidth <= 360){
-    minCardWidth.value = 150;
+    minCardWidth.value = 150; //px
   }else if(window.innerWidth > 360 && window.innerWidth <= 420){
-    minCardWidth.value = 160;
+    minCardWidth.value = 160; //px
   }else if (window.innerWidth > 420 && window.innerWidth <= 640) {
     minCardWidth.value = 175; //px
   }else{

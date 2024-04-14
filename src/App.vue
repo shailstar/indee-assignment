@@ -5,7 +5,6 @@
       :value="carouselData"
       :numVisible="1"
       :autoplayInterval="5"
-      :numScroll="1"
       :showIndicators="true"
     />
     <div class="flex flex-col gap-10">
